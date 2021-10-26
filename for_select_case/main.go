@@ -5,6 +5,12 @@ import (
     "runtime"
 )
 
+// 1
+// 123
+// hello
+// 123
+// fatal error: all goroutines are asleep - deadlock!
+
 func main() {
     runtime.GOMAXPROCS(1)
     intChan := make(chan int, 1)
