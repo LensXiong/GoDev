@@ -11,11 +11,13 @@ func main() {
     stringChan := make(chan string, 1)
     intChan <- 1
     stringChan <- "hello"
-    select {
-    case intValue := <-intChan:
-        fmt.Println(intValue)
-    case stringValue := <-stringChan:
-        fmt.Println(stringValue)
+    for {
+        select {
+        case intValue := <-intChan:
+            fmt.Println(intValue)
+        case stringValue := <-stringChan:
+            fmt.Println(stringValue)
+        }
+        fmt.Println("123")
     }
-    fmt.Println("123")
 }

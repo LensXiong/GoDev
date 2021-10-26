@@ -19,7 +19,7 @@ func (stu *Student) Speak(think string) (talk string) {
 }
 func main() {
     // cannot use Student literal (type Student) as type People in assignment:
-    //	Student does not implement People (Speak method has pointer receiver)
+    // Student does not implement People (Speak method has pointer receiver)
     // var peo People = Student{}
     var peo People = &Student{}
     think := "good"
