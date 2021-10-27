@@ -10,13 +10,6 @@ import (
 // defer2 error
 // <nil>
 
-func f1() (r int) {
-    defer func(r *int) {
-        *r = *r + 5
-    }(&r)
-    return 1
-}
-
 func defer1() {
     var err error
     defer fmt.Println(err)
