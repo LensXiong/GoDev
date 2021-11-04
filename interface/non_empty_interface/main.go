@@ -10,17 +10,19 @@ type People interface {
 
 type Student struct{}
 
-func (stu *Student) Show() {}
+func (stu *Student) Show() {
+
+}
 
 func live() People {
-    var stu *Student // <nil>
-    fmt.Println(stu)
+    var stu *Student
     return stu
 }
+
 func main() {
     if live() == nil {
-        fmt.Println("AAAAAAAAAAA")
+        fmt.Println("AAAAAAA")
     } else {
-        fmt.Println("BBBBBBBBBBB")
+        fmt.Println("BBBBBBB")
     }
 }
