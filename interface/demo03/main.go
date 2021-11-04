@@ -17,6 +17,7 @@ func live() People {
     fmt.Println(stu)
     return stu
 }
+
 func main() {
     if live() == nil {
         fmt.Println("AAAAAAAAAAA")
