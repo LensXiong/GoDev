@@ -1,8 +1,9 @@
 package main
 
 import (
-    "encoding/json"
     "fmt"
+    "runtime"
+    "time"
 )
 
 func Processor(seq <-chan int, wait chan struct{}, level int) {
@@ -29,11 +30,24 @@ type Person struct {
 }
 
 func main() {
-    var f1 []string // nil切片
-    json1, _ := json.Marshal(Person{Friends: f1})
-    fmt.Printf("%s\n", json1) // output：{"Friends": null}
-
-    f2 := make([]string, 0) // non-nil空切片
-    json2, _ := json.Marshal(Person{Friends: f2})
-    fmt.Printf("%s\n", json2) // output: {"Friends": []}
+    var ch chan int
+    go func() {
+        ch<- 1
+        ch<- 2
+    }()
+    //go func() {
+    //    <-ch
+    //}()
+    c := time.Tick(1 * time.Second)
+    for range c {
+        // NumGoroutine returns the number of goroutines that currently exist.
+        fmt.Printf("#goroutines: %d\n", runtime.NumGoroutine())
+    }
+    //var f1 []string // nil切片
+    //json1, _ := json.Marshal(Person{Friends: f1})
+    //fmt.Printf("%s\n", json1) // output：{"Friends": null}
+    //
+    //f2 := make([]string, 0) // non-nil空切片
+    //json2, _ := json.Marshal(Person{Friends: f2})
+    //fmt.Printf("%s\n", json2) // output: {"Friends": []}
 }
