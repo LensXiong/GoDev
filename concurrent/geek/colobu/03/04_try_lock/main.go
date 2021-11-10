@@ -1,5 +1,6 @@
 package main
 
+// 要点：基于 Mutex 实现 TryLock
 import (
     "fmt"
     "math/rand"
