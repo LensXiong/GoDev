@@ -1,6 +1,11 @@
 package main
 
-// 要点：基于 Mutex 实现 TryLock
+// 要点：基于 Mutex 实现 TryLock。
+
+// 当一个 goroutine 调用这个 TryLock 方法请求锁的时候，如果这把锁没有被其他 goroutine 所持有.
+// 那么，这个 goroutine 就持有了这把锁，并返回 true;
+// 如果这把锁已经被其他 goroutine 所持有，或者是正在准备交给某个被唤醒的 goroutine。
+// 那么这个请求锁的 goroutine 就直接返回 false，不会阻塞在方法调用上。
 import (
     "fmt"
     "math/rand"

@@ -1,4 +1,4 @@
-package token
+package _3_token
 
 import (
     "fmt"

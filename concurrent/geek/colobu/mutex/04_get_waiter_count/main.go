@@ -8,7 +8,8 @@ import (
     "unsafe"
 )
 
-// 要点：通过 unsafe 的方式读取到 Mutex 内部的 state 字段。
+// 要点：获取等待者的数量等指标。
+// 通过 unsafe 的方式读取到 Mutex 内部的 state 字段。
 
 const (
     mutexLocked = 1 << iota // mutex is locked

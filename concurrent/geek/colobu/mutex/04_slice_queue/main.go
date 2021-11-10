@@ -1,7 +1,7 @@
 package main
 
 import "sync"
-
+// 要点：使用 Mutex 实现一个线程安全的队列。
 type SliceQueue struct {
     data []interface{}
     mu   sync.Mutex
