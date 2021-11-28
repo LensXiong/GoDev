@@ -19,7 +19,7 @@ func main() {
     student := Student{"wangxiong"}
 
     list["student"] = student
-    list["student"].Name = "wwxiong"
+    //list["student"].Name = "wwxiong"
 
     fmt.Println(list["student"]) // {wangxiong}
 }
