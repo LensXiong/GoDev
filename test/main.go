@@ -50,11 +50,3 @@ package main
  */
 
 
-
-
-
-func main(){
-    slice := []int64{89,3,8,67,78,44,63,9}
-
-}
-

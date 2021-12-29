@@ -36,8 +36,10 @@ func worker(c *Counter, wg *sync.WaitGroup) {
 func main() {
     var counter Counter
     var wg sync.WaitGroup
-    wg.Add(10)                // WaitGroup的值设置为10
-    for i := 0; i < 10; i++ { // 启动10个goroutine执行加1任务
+    // WaitGroup的值设置为10
+    wg.Add(10)
+    // 启动10个goroutine执行加1任务
+    for i := 0; i < 10; i++ {
         go worker(&counter, &wg)
     }
     // 检查点，等待goroutine都完成任务
