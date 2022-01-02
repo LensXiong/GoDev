@@ -15,10 +15,12 @@ import (
 // 解决这个 Bug 的办法就是将 unbuffered chan 改成容量为 1 的 chan，这样写就不会被阻塞了。
 
 func process(timeout time.Duration) bool {
+    // 正确处理后办法
     ch := make(chan bool, 1)
+    //ch := make(chan bool)
     go func() {
         // 模拟处理耗时的业务
-        // time.Sleep((timeout + time.Second))
+        time.Sleep((timeout + time.Second))
         ch <- true // block
         fmt.Println("exit goroutine")
     }()
