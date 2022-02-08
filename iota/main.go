@@ -18,6 +18,7 @@ const (
     f     = iota
 )
 
+// 0 1 3 4 1 2
 func main() {
     fmt.Println(a)
     fmt.Println(b)

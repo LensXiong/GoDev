@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //func main() {
 //    arr := make([]int, 0)
 //    for i := 0; i < 2000; i++ {
@@ -48,5 +50,24 @@ package main
 }]
 
  */
+
+
+type T struct {
+	a int
+	b float64
+	c string
+}
+func main (){
+	t := &T{ 7, -2.35, "abc\tdef" }
+	fmt.Printf("%v\n", t)
+	fmt.Printf("%+v\n", t)
+	fmt.Printf("%#v\n", t)
+
+	x := []int{1,2,3}
+	y := []int{4,5,6}
+	x = append(x, y...)
+	fmt.Println(x)
+}
+
 
 
